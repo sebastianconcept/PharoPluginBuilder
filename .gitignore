@@ -31,3 +31,4 @@ SqueakDebug.log
 github-*.zip
 
 ide/
+dist/

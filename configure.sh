@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default build
-cmake -S . -B out/build
+cmake -S . -B dist/build
 
 
 # Build tunning options
