@@ -22,10 +22,16 @@ You can use a clone of this repository for local development of a Pharo Smalltal
  │     └────────────────┘   │  │Command to configure your environment│    
  │     ┌────────────────┐   └──┤(prior to trigger a build).          │    
  ├────▶│dependencies/   │      └─────────────────────────────────────┘    
- │     └─┬──────────────┘      ┌───────────────────────────────┐          
- │       │  ┌─────────────┐    │The Pharo VM (hard requirement │          
- │       └─▶│  pharo-vm/  │◀───┤for building your plugin).     │          
- │      ... └─────────────┘    └───────────────────────────────┘          
+ │     └─┬──────────────┘                                                 
+ │       │  ┌──────────┐           ┌───────────────────┐                  
+ │       ├─▶│ builds/  │           │Output dir for the │                  
+ │       │  └─┬────────┘         ┌─┤pharo-vm build.    │                  
+ │       │    │  ┌─────────────┐ │ └───────────────────┘                  
+ │       │    └─▶│  pharo-vm/  │◀┘                                        
+ │       │       └─────────────┘  ┌───────────────────────────────┐       
+ │       │  ┌─────────────┐       │The Pharo VM (hard requirement │       
+ │       └─▶│  pharo-vm/  │◀──────┤for building your plugin).     │       
+ │      ... └─────────────┘       └───────────────────────────────┘       
  │       │  ┌────────────────────┐     ┌─────────────────────────────┐    
  │       └─▶│ third-party-lib-X/ │◀─┐  │Any third party lib required │    
  │          └────────────────────┘  └──┤by your plugin.              │    

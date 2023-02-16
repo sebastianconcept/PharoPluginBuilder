@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# pharo-vm dependency configure
+cmake -S ./dependencies/pharo-vm -B ./dependencies/builds/pharo-vm
+
+
 # Default build
 cmake -S . -B dist/build
 

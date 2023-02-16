@@ -1,3 +1,4 @@
 #!/bin/bash
 
-cd dist/build; make
+cd dependencies/builds/pharo-vm; make
+# cd dist/build; make
