@@ -1,11 +1,17 @@
 ![PharoPluginBuilder](./header.jpg)
 
 # PharoPluginBuilder
-A foundation for building your own Pharo plugins.
+A friendly setup for creating your own Pharo plugins.
 _____
 
 
-You can use a clone of this repository for local development of a Pharo Smalltalk Plugin.
+You can use a clone of this repository for local development of a Pharo Smalltalk Plugin. With it, you'll be able to:
+1. Have a fast start on the setup to start a new plugin from scratch.
+2. Use the [pharo-vm](https://github.com/pharo-project/pharo-vm) dependency in an organized and correct way.
+3. Use Pharo as IDE for generating the C code of your plugin out of your [Slang](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Glossary.md#slang) code.
+4. Have your plugin code versioned in your own separated repo as it should.
+5. Generate the binaries of your plugin.
+6. Test your plugin binary using the same Pharo image you use as IDE.
 
 ## Structure
 
@@ -71,11 +77,68 @@ You can use a clone of this repository for local development of a Pharo Smalltal
 ```
 
 ## Outline
+Creating your plugin roughly goes like this:
+1. Clone this repo:
+```
+git clone git@github.com:sebastianconcept/PharoPluginBuilder.git
+```
+   
+2. Make a directory to sit a Pharo image to use as IDE and install your plugin project in it. You can use [StarterPlugin](https://github.com/sebastianconcept/StarterPlugin) as a seed for it:
 
+```
+mkdir ide
+```
+```
+cd ide
+```
+I'm using Pharo 9 this time:
+```
+curl get.pharo.org/64/90 | bash
+```
+```
+curl get.pharo.org/64/vm90 | bash
+```
+Open that Pharo image and in a Playground evaluate:
 
+```smalltalk
+Metacello new
+  baseline: 'StarterPlugin';
+  repository: 'github://sebastianconcept/StarterPlugin';
+  load
+```
 
-## Install
-
+3. Back to the root directory of `PharoPluginBuilder`, go ahead and configure, in `./dependencies/builds/pharo-vm`, the `pharo-vm` you have in `dependencies/`:
+```
+cmake -S ./dependencies/pharo-vm -B ./dependencies/builds/pharo-vm
+```
+4. And build it so you have all the requirements that are **generated**:
+```
+cd dependencies/builds/pharo-vm; make
+```
+4. Once the `pharo-vm` build is done, go back to this repo's root and configure the whole project:
+```
+./configure.sh
+```
+5. And build it:
+```
+./build.sh
+```
+6. Once that build finishes you plugin will be there. You can symlink this brand new lib which is the binary of your plugin:
+```
+cd ide
+ln -s libStarterPlugin.dylib -> ../dist/build/libStarterPlugin.dylib
+```
+From the Pharo you have in `ide/`, you will be able to use it.
 ## Using your StarterPlugin
+
+Your plugin should be lazily loaded by Pharo's VM once you use it.  You can check that with:
+```
+Smalltalk vm listLoadedModules
+```
+In `StarterPlugin` I've added the method that returns the harcoded version programmed from Slang:
+```
+Starter pluginVersion
+```
+It should look like this:
 
 ![Testing your StarterPlugin](./testingStarterPlugin.gif)
