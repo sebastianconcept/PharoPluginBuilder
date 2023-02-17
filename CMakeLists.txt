@@ -25,9 +25,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
 
 target_include_directories(${PROJECT_NAME}
   PUBLIC src/generated/64/plugins/src/StarterPlugin
-  PRIVATE dependencies/pharo-vm
-  PRIVATE dependencies/pharo-vm/build/build/include/pharovm
-  PRIVATE dependencies/pharo-vm/build/generated/64/vm/include
+  PRIVATE dependencies/builds/pharo-vm/
+  PRIVATE dependencies/builds/pharo-vm/build/include/pharovm/
+  PRIVATE dependencies/builds/pharo-vm/generated/64/vm/include
   PRIVATE dependencies/pharo-vm/extracted/vm/include/osx
   PRIVATE dependencies/pharo-vm/extracted/vm/include/common
   PRIVATE dependencies/pharo-vm/include/pharovm/
