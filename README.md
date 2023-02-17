@@ -76,7 +76,7 @@ You can use a clone of this repository for local development of a Pharo Smalltal
                                     └────────────────────┘                
 ```
 
-## Outline
+## Steps
 Creating your plugin roughly goes like this:
 1. Clone this repo:
 ```
