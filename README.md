@@ -137,7 +137,7 @@ cd dependencies/builds/pharo-vm; make
 6. Once that build finishes you plugin will be there. You can symlink this brand new lib which is the binary of your plugin:
 ```
 cd ide
-ln -s libStarterPlugin.dylib -> ../dist/build/libStarterPlugin.dylib
+ln -s ../dist/build/libStarterPlugin.dylib libStarterPlugin.dylib
 ```
 From the Pharo you have in `ide/`, you will be able to use it.
 ## Using your StarterPlugin
