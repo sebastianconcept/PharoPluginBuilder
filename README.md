@@ -98,7 +98,18 @@ curl get.pharo.org/64/90 | bash
 ```
 curl get.pharo.org/64/vm90 | bash
 ```
+Now, we need to load VMMaker (for Pharo `v9.0.21` at this time) and your plugin project in that IDE Pharo image. In this guide, instead of your actual plugin project, we will be using `StarterPlugin`.
+
 Open that Pharo image and in a Playground evaluate:
+
+```smalltalk
+Metacello new
+  baseline: 'VMMaker';
+  repository: 'github://pharo-project/pharo-vm:v9.0.21';
+  load.
+```
+
+Now the superclass of your plugin was loaded in that image, go ahead and to load `StarterPlugin` evaluate:
 
 ```smalltalk
 Metacello new
