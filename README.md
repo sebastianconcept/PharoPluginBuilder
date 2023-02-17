@@ -80,7 +80,7 @@ You can use a clone of this repository for local development of a Pharo Smalltal
 Creating your plugin roughly goes like this:
 1. Clone this repo:
 ```
-git clone git@github.com:sebastianconcept/PharoPluginBuilder.git
+git clone --recursive git@github.com:sebastianconcept/PharoPluginBuilder.git
 ```
    
 2. Make a directory to sit a Pharo image to use as IDE and install your plugin project in it. You can use [StarterPlugin](https://github.com/sebastianconcept/StarterPlugin) as a seed for it:
