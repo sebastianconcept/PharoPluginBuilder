@@ -1,4 +1,4 @@
-![PharoPluginBuilder](./assets/header.png)
+![PharoPluginBuilder](./header.jpg)
 
 # PharoPluginBuilder
 A foundation for building your own Pharo plugins.
@@ -78,4 +78,4 @@ You can use a clone of this repository for local development of a Pharo Smalltal
 
 ## Using your StarterPlugin
 
-![PharoPluginBuilder](./assets/header.png)
+![Testing your StarterPlugin](./testingStarterPlugin.gif)
