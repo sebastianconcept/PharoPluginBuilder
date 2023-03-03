@@ -22,14 +22,6 @@ add_library(${PROJECT_NAME} SHARED src/generated/64/plugins/src/StarterPlugin/St
 #Add the VM dependency
 add_subdirectory(dependencies/pharo-vm)
 target_link_libraries(${PROJECT_NAME} PharoVMCore)
-target_include_directories(${PROJECT_NAME}
-    PRIVATE
-    ${PharoVM_BINARY_DIR}/build/include/pharovm/
-    ${PharoVM_BINARY_DIR}/build/include/pharovm/
-    ${PharoVM_SOURCE_DIR}/include/pharovm/
-    ${PharoVM_SOURCE_DIR}/extracted/vm/include/common
-    ${PharoVM_SOURCE_DIR}/extracted/vm/include/osx)
-
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
   
   # Try next:
