@@ -17,23 +17,12 @@ ELSE()
 ENDIF()
 
 # The source of the library we want to build
-add_library(${PROJECT_NAME} src/generated/64/plugins/src/StarterPlugin/StarterPlugin.c)
+add_library(${PROJECT_NAME} SHARED src/generated/64/plugins/src/StarterPlugin/StarterPlugin.c)
 
+#Add the VM dependency
 add_subdirectory(dependencies/pharo-vm)
-
+target_link_libraries(${PROJECT_NAME} PharoVMCore)
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
-
-target_include_directories(${PROJECT_NAME}
-  PUBLIC src/generated/64/plugins/src/StarterPlugin
-  PRIVATE dependencies/builds/pharo-vm/
-  PRIVATE dependencies/builds/pharo-vm/build/include/pharovm/
-  PRIVATE dependencies/builds/pharo-vm/generated/64/vm/include
-  PRIVATE dependencies/pharo-vm/extracted/vm/include/osx
-  PRIVATE dependencies/pharo-vm/extracted/vm/include/common
-  PRIVATE dependencies/pharo-vm/include/pharovm/
-  PRIVATE dependencies/pharo-vm/extracted/vm/include/
-  PRIVATE dependencies/pharo-vm/include/
-  )
   
   # Try next:
   # PRIVATE dependencies/shinythirdparty/target/debug
