@@ -144,7 +144,9 @@ Open Pharo
 Open that Pharo image and in a Playground evaluate:
 
 ```smalltalk
-"Note: be patient here as this can take a while with Pharo's UI not giving you any feedback. It's going to clone alright, it just takes a while."
+"Note: be patient here as this can take a while with Pharo's UI 
+not giving you any feedback. It's going to clone alright, 
+it just takes a while."
 Metacello new
   baseline: 'VMMaker';
   repository: 'github://pharo-project/pharo-vm:v9.0.21';
@@ -154,7 +156,8 @@ Metacello new
 Again, instead of an actual real plugin project of yours, we will be using `StarterPlugin` go ahead and evaluate:
 
 ```smalltalk
-"This is a seed repo that you can use as starter for later having your own plugin projects in a similar organized manner."
+"This is a seed repo that you can use as starter for later having
+your own plugin projects in a similar organized manner."
 Metacello new
   baseline: 'StarterPlugin';
   repository: 'github://sebastianconcept/StarterPlugin';
